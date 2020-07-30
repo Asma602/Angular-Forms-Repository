@@ -1,0 +1,142 @@
+
+
+<div class="container">
+  <div class="row mt-5">
+    <div class="col-md-6">
+
+      <app-first-component></app-first-component>
+
+      <!-- Reactive Form  -->
+
+      <!-- <form  [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+        <div formGroupName="userData">
+            <div class="form-group">
+                <label for="username"> User Name</label>
+                <input type="text" formControlName="username" class="form-control"
+                (input)="throttle()">
+                <span class="help-block text-danger " 
+                *ngIf="!signUpForm.get('userData.username').valid && signUpForm.get('userData.username').touched">
+
+                <span class="help-block"
+                *ngIf="signUpForm.get('userData.username').errors['nameIsForbidden']">
+                  This username is not available!
+                </span>
+                <span class="help-block" *ngIf = "signUpForm.get('userData.username').errors['required']">
+                  User name is required!
+                </span>
+               </span>
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="text" formControlName="email" class="form-control"
+                >
+                <span class="help-block text-danger " 
+                *ngIf="!signUpForm.get('userData.email').valid && signUpForm.get('userData.email').touched">
+                  Please enter a valid email!</span>
+              </div>
+        </div>
+        <div formGroupName="userPwd">
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" formControlName="password" class="form-control">
+          </div>
+          <div class="form-group">
+              <label for="confirmPassword">Confirm Password</label>
+              <input type="password" formControlName="confirmPassword" class="form-control"
+              (input)="matchPassword()">
+            </div>
+
+            <span class="help-block text-danger" *ngIf="!isPwdMatched">
+              Password and Confirm Password don't match!</span>
+        </div>
+
+        <div class="form-group radio" *ngFor="let gender of genders">
+          <label for="gender">
+            <input type="radio" [value]="gender" formControlName="gender"> {{ gender }}
+          </label>
+        </div>
+
+        <div formArrayName="hobbies">
+          <h4>Your hobbies</h4>
+          <button type="button" class="btn btn-warning" (click)="addHobby()">Add Hobby</button>
+          <div class="form-group" 
+          *ngFor="let hobbyControl of signUpForm.get('hobbies').controls; let i = index">
+            <input type="text" class="form-control" [formControlName]="i">
+          </div>
+        </div>
+
+
+        <span class="help-block text-danger " 
+        *ngIf="!signUpForm.valid && signUpForm.touched">
+          Please enter a valid data!</span><br>
+        <button class="btn btn-primary" type="submit">Submit</button>
+
+      </form> -->
+    </div>
+  </div>
+
+
+
+
+<!-- template driven form -->
+  <!-- <div class="row mt-4">
+
+    <div class="col-md-6">
+      <form (ngSubmit)="saveForm(form)" #form ="ngForm">
+
+        <div id="user-data" ngModelGroup="userData" #userData="ngModelGroup">
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" required class="form-control" name="username" id="username" ngModel/>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" required email class="form-control" name="email" id="email" 
+            ngModel
+            #email="ngModel" />
+            <span class="help-block text-danger" *ngIf="!email.valid && email.touched">Please enter a valid value!</span>
+          </div>
+          <span class="help-block text-danger" *ngIf="!userData.valid && userData.touched">
+            User data is invalid!
+          </span>
+        </div>
+        <div class="form-group radio" *ngFor="let gender of genders">
+          <label>
+            <input type="radio" required name="gender" ngModel [value]="gender">
+            {{ gender }}
+          </label>
+        </div>
+          <div class="form-group">
+            <label for="secret">Secret Question</label>
+            <select name="secret" id="secret" class="form-control" 
+            [ngModel] = "defaultQuestion" 
+            required>
+              <option value="Favorite fruit">Favorite fruit</option>
+              <option value="Best friend">Best friend</option>
+              <option value="Pet Name">Pet Name</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <textarea name="secretAnswer" id="secretAnswer" rows="3"
+            [(ngModel)] = "secretAnswer" class="form-control"></textarea>
+            <span>Your answer is : {{ secretAnswer }}</span>
+          </div>
+
+          <button class="btn-primary btn" [disabled]="!form.valid">Submit</button>
+      </form>
+  
+    </div>
+
+  </div>
+  <hr>
+  <div class="row" *ngIf = "isSubmitted">
+    <div class="col-md-5">
+      <h3>Your Data</h3>
+      <p>User name : {{ user.username }}</p>
+      <p>User Email : {{ user.email }}</p>
+      <p>Gender : {{ user.gender }}</p>
+      <p>Secret Answer : {{ user.secretAnswer }}</p>
+    </div>
+  </div> -->
+  
+</div>

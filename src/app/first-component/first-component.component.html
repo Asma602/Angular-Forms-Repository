@@ -1,0 +1,33 @@
+
+
+<div class="col-md-12">
+    <button class="btn btn-primary" (click)="addNewUser()">
+            addNewUser
+    </button>
+    <table class="table-striped mt-3 table">
+        <tbody class="tbody">
+            <tr>
+                <th>User Id</th>
+                <th>User Name</th>
+                <th>Update</th>
+                <th>Delete</th>
+            </tr>
+            <tr *ngFor="let user of Users">
+                <td>
+                    <input type="text" value="{{ user.id }}" class="form-control"></td>
+                <td><input type="text" value="{{ user.name }}" class="form-control"></td>
+                <td>
+                    <button class="btn btn-primary" (click)="updateUser(user)">
+                        Update
+                    </button>
+                </td>
+                <td>
+                    <button class="btn btn-danger" (click)="deleteUser(user.id)">
+                        Delete
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+
+    </table>
+</div>
